@@ -1,0 +1,200 @@
+---
+import SpaceXIcon from "./icons/SpaceXIcon.astro";
+import ItemMenu from "./ItemMenu.astro";
+---
+
+<header id="header_id" class="flex fixed p-5 w-full bg-current items-center z-[2] md:pl-24">
+    <a href="/" class="w-full mt-10 h-7 sm:mt-0 md:w-52" aria-label="Link to refresh the page">
+        <SpaceXIcon class="w-full h-7 md:w-52"/>
+    </a>
+    <nav class="hidden md:inline-block">
+        <ItemMenu classtxt="hidden md:inline-block" text="/" label='Falcon 9 vehicle page'>
+            FALCON 9
+        </ItemMenu>
+        <ItemMenu classtxt="hidden md:inline-block" text="/" label='Falcon Heavy vehicle page'>
+            FALCON HEAVY
+        </ItemMenu>
+        <ItemMenu classtxt="hidden md:inline-block" text="/" label='Dragon spacecraft page'>
+            DRAGON
+        </ItemMenu>
+        <ItemMenu classtxt="hidden lg:inline-block" text="/" label='Starship vehicle page'>
+            STARSHIP
+        </ItemMenu>
+        <ItemMenu classtxt="hidden lg:inline-block" text="/" label='Human Spaceflight page'>
+            HUMAN SPACEFLIGHT
+        </ItemMenu>
+        <ItemMenu classtxt="hidden xl:inline-block" text="/" label='Rideshare program page'>
+            RIDESHARE
+        </ItemMenu>
+        <ItemMenu classtxt="hidden xl:inline-block" text="/" label='Starshield program page'>
+            STARSHIELD
+        </ItemMenu>
+        <ItemMenu classtxt="hidden xl:inline-block" text="/" label='Starlink website'>
+            STARLINK
+        </ItemMenu>
+    </nav>
+    <nav class="flex h-6 absolute right-10 items-center">
+        <ItemMenu id="shop" classtxt="hidden sm:inline-block" text="/" label='SpaceX shop page'>
+            SHOP
+        </ItemMenu>
+        <input type="checkbox" id="btn_menu" class="hidden">
+        <label for="btn_menu" id="lbl_menu" class="relative ml-2 w-5 h-3 cursor-pointer">
+            <span id="line_1" class="absolute w-full h-[1px] content-none bg-white rounded"></span>
+            <span id="line_2" class="absolute w-full h-[1px] top-[5.5px] content-none bg-white rounded"></span>
+            <span id="line_3" class="absolute w-full h-[1px] bottom-0 content-none bg-white rounded"></span>
+        </label>
+    </nav>
+</header>
+<aside class="fixed h-full right-0 bg-black opacity-80 z-[1]">
+    <nav class="relative w-52 h-60 top-20 left-1/4">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right md:hidden" text="/" label='Falcon 9 vehicle page'>
+                FALCON 9
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 md:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right md:hidden" text="/" label='Falcon Heavy vehicle page'>
+                FALCON HEAVY
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 md:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right md:hidden" text="/" label='Dragon spacecraft page'>
+                DRAGON
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 md:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right lg:hidden" text="/" label='Starship vehicle page'>
+                STARSHIP
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 lg:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right lg:hidden" text="/" label='Human Spaceflight page'>
+                HUMAN SPACEFLIGHT
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 lg:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right xl:hidden" text="/" label='Rideshare program page'>
+                RIDESHARE
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 xl:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right xl:hidden" text="/" label='Starshield program page'>
+                STARSHIELD
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 xl:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right xl:hidden" text="/" label='Starlink website'>
+                STARLINK
+            </ItemMenu>
+        </div>
+        <hr class="block opacity-50 xl:hidden">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right" text="/" label='SpaceX mission page'>
+                MISSION
+            </ItemMenu>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right" text="/" label='SpaceX launches page'>
+                LAUNCHES
+            </ItemMenu>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right" text="/" label='SpaceX careers page'>
+                CAREERS
+            </ItemMenu>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right" text="/" label='SpaceX updates page'>
+                UPDATES
+            </ItemMenu>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-end">
+            <ItemMenu classtxt="block my-3 text-right" text="/" label='SpaceX shop page'>
+                SHOP
+            </ItemMenu>
+        </div>
+        <hr class="opacity-50">
+    </nav>
+</aside>
+
+<style>
+    header {
+        transition: top 0.3s;
+    }
+
+    span {
+        transition: all 400ms ease;
+    }
+
+    #btn_menu:checked ~ #lbl_menu #line_1 {
+        transform: rotate(140deg);
+        top: 5px;
+    }
+
+    #btn_menu:checked ~ #lbl_menu #line_2 {
+        opacity: 0;
+    }
+
+    #btn_menu:checked ~ #lbl_menu #line_3 {
+        transform: rotate(-140deg);
+        top: 5px;
+    }
+</style>
+
+<script>
+    const btn = document.getElementById("btn_menu") as HTMLInputElement;
+    const aside = document.querySelector('aside') as HTMLElement;
+    const id_shop = document.getElementById('shop') as HTMLAnchorElement;
+
+    aside.classList.add('w-0');
+
+    btn.addEventListener('click', () => {
+        if (aside.classList.contains('w-0')) {
+            aside.style.transition = "all 900ms ease-out";
+            id_shop.style.transition = "all 900ms ease-out";
+            id_shop.style.display = "none";
+            aside.classList.add('w-80')
+            aside.classList.remove('w-0');
+        } else {
+            aside.style.transition = "all 900ms ease-out";
+            id_shop.style.transition = "all 900ms ease-out";
+            id_shop.style.display = "block";
+            aside.classList.remove('w-80')
+            aside.classList.add('w-0');
+        }
+    });
+</script>
+
+<script>
+    const header = document.getElementById('header_id') as HTMLElement;
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.8
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const { isIntersecting } = entry
+            if (isIntersecting) {
+                const color = entry.target.getAttribute('data-header-color') as string;
+                header.style.backgroundColor = color;
+            }
+        });
+    }, options);
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => observer.observe(section));
+</script>

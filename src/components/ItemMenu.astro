@@ -1,0 +1,40 @@
+---
+interface Props {
+    text : string;
+    classtxt : string;
+    id? : string;
+    label : string;
+}
+
+const { text, classtxt, id, label } =  Astro.props;
+---
+
+<a id={id} aria-label={label} href={text} class=`mx-3 text-white text-xs font-bold ${classtxt}`>
+    <slot/>
+</a>
+
+<style>
+    a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        border-radius: 4px;
+        background-color: white;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+
+    a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+</style>

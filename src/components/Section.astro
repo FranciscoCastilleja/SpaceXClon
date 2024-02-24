@@ -1,0 +1,12 @@
+---
+interface Props {
+    img? : string;
+    color: string;
+}
+
+const { img, color } =  Astro.props;
+---
+
+<section data-header-color={color} style={img} class="w-full h-screen bg-cover bg-center snap-center">
+    <slot/>
+</section>
