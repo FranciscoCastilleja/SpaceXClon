@@ -7,23 +7,12 @@ import Section from '../components/Section.astro';
 <Layout title="SpaceX - Clon">
 	<Header/>
 	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
-		<Section color='transparent' client:load h3='UPCOMING LAUNCH' h2='STARLINK MISSION' button='WATCH' img="background-image: url('/media/SpaceX-Section-6.webp')"/>
-		<Section color='rgba(0, 0, 0, 0.8)' client:load h3='RECENT LAUNCH' h2='STARLINK MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-1.webp')"/>
-		<Section color='rgba(0, 0, 0, 0.8)' client:load h3='RECENT LAUNCH' h2='TELKOMSAT MERAH PUTIH 2 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-2.webp')"/>
-		<Section color='rgba(0, 0, 0, 0.8)' client:load h3='RECENT LAUNCH' h2='INTUITIVE MACHINES IM-1 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-3.webp')"/>
-		<Section color='rgba(0, 0, 0, 0.8)' client:load h3='RECENT LAUNCH' h2='USSF-124 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-4.webp')"/>
-		<section data-header-color="rgba(0, 0, 0, 0.8)" class="w-full h-screen bg-cover bg-center snap-center">
-			<video autoplay muted loop id="myVideo" class="absolute size-full object-fill z-0">
-				<source class="w-full h-full" src="/media/SpaceX-Section-5.mp4" type="video/mp4">
-			</video>
-			<div class="grid relative ml-10 p-3 max-w-md top-[600px] place-items-center sm:ml-20 sm:top-96">
-				<h3 class="block w-full text-white text-xl text-start">RECENT LAUNCH</h3>
-				<h2 class="block mt-1 w-full text-white text-5xl font-bold text-start">STARSHIP'S SECOND FLIGHT TEST</h2>
-				<span class="flex mt-8 w-full float-left">
-					<button class="grid py-3 px-14 border-2 border-white text-white font-bold place-items-center">LEARN MORE</button>
-				</span>
-			</div>
-		</section>
+		<Section color='transparent' h3='UPCOMING LAUNCH' h2='STARLINK MISSION' button='WATCH' img="background-image: url('/media/SpaceX-Section-6.webp')"/>
+		<Section color='rgba(0, 0, 0, 0.8)' h3='RECENT LAUNCH' h2='STARLINK MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-1.webp')"/>
+		<Section color='rgba(0, 0, 0, 0.8)' h3='RECENT LAUNCH' h2='TELKOMSAT MERAH PUTIH 2 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-2.webp')"/>
+		<Section color='rgba(0, 0, 0, 0.8)' h3='RECENT LAUNCH' h2='INTUITIVE MACHINES IM-1 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-3.webp')"/>
+		<Section color='rgba(0, 0, 0, 0.8)' h3='RECENT LAUNCH' h2='USSF-124 MISSION' button='REWATCH' img="background-image: url('/media/SpaceX-Section-4.webp')"/>
+		<Section color='rgba(0, 0, 0, 0.8)' h3='RECENT LAUNCH' h2="STARSHIP'S SECOND FLIGHT TEST" button='LEARN MORE' video="/media/SpaceX-Section-5.mp4"/>
 		<footer class="absolute py-5 snap-center w-full h-20 bg-black">
 			<span class="flex h-full text-white justify-center items-center gap-x-8">
 				<p class="text-xs font-normal">SPACEX CLON 2024</p>
