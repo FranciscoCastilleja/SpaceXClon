@@ -1,20 +1,16 @@
 ---
 interface Props {
-    img? : string;
-    video? : string;
+    img : string;
     h3 : string;
     h2 : string;
     button : string;
     color : string;
 }
 
-const { img, h3, h2, button, video, color } = Astro.props;
+const { img, h3, h2, button, color } = Astro.props;
 ---
 
 <section data-header-color={color} style={img} class="w-full h-screen bg-cover bg-center snap-center">
-    <video autoplay muted loop id="myVideo" class="absolute size-full object-fill z-0">
-        <source class="w-full h-full" src={video} type="video/mp4">
-    </video>
     <div class="grid relative ml-10 p-3 max-w-md top-[600px] place-items-center sm:ml-20 sm:top-96">
         <h3 class="block w-full text-white text-xl text-start">{h3}</h3>
         <h2 class="block mt-1 w-full text-white text-5xl font-bold text-start">{h2}</h2>
