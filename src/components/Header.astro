@@ -4,7 +4,7 @@ import ItemMenu from "./ItemMenu.astro";
 ---
 
 <header id="header_id" class="flex fixed p-5 w-full bg-current items-center z-[2] md:pl-24">
-    <a href="/" class="w-full mt-10 h-7 sm:mt-0 md:w-52" aria-label="Link to refresh the page">
+    <a href="/" class="w-full mt-5 h-7 sm:mt-0 md:w-52" aria-label="Link to refresh the page">
         <SpaceXIcon class="w-full h-7 md:w-52"/>
     </a>
     <nav class="hidden md:inline-block">
@@ -169,7 +169,9 @@ import ItemMenu from "./ItemMenu.astro";
         } else {
             aside.style.transition = "all 900ms ease-out";
             id_shop.style.transition = "all 900ms ease-out";
-            id_shop.style.display = "block";
+            if (window.matchMedia('(min-width: 600px)').matches) {
+                id_shop.style.display = "block";
+            }
             aside.classList.remove('w-80')
             aside.classList.add('w-0');
         }
