@@ -1,4 +1,7 @@
 ---
+import ChevronDownIcon from './icons/ChevronDownIcon.astro';
+import { fade } from "astro:transitions";
+
 interface Props {
     img? : string;
     video? : string;
@@ -11,20 +14,142 @@ interface Props {
 const { img, h3, h2, button, video, color } = Astro.props;
 ---
 
-<section data-header-color={color} style={img} class="w-full h-screen bg-cover bg-center snap-center">
+<section data-header-color={color} style={img} class="relative w-full h-screen bg-cover bg-center snap-center">
     <video autoplay muted loop id="myVideo" class="absolute size-full object-fill z-0">
         <source class="w-full h-full" src={video} type="video/mp4">
     </video>
-    <div class="grid relative ml-10 p-3 max-w-md top-[600px] place-items-center sm:ml-20 sm:top-96">
-        <h3 class="block w-full text-white text-xl text-start">{h3}</h3>
-        <h2 class="block mt-1 w-full text-white text-5xl font-bold text-start">{h2}</h2>
-        <span class="flex mt-8 w-full float-left">
+    <div class="grid relative ml-10 p-3 max-w-md top-[50%] place-items-center sm:ml-20">
+        <h3 class="block w-full text-white text-xl text-start opacity-0">{h3}</h3>
+        <h2 class="block mt-1 w-full text-white text-5xl font-bold text-start opacity-0">{h2}</h2>
+        <span id="btn-animation" class="flex mt-8 w-full float-left opacity-0">
             <button class="grid py-3 px-14 border-2 border-white text-white font-bold place-items-center">{button}</button>
         </span>
+    </div>
+    <div id="div-icon" class="grid absolute ml-[48%] size-12 top-[600px] place-items-center sm:top-[88%]">
+        <ChevronDownIcon/>
     </div>
 </section>
 
 <style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #h3_1 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h3_2 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h3_3 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h3_4 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h3_5 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h3_6 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_1 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_2 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_3 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_4 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_5 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #h2_6 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_1 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_2 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_3 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_4 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_5 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
+    #btn_6 {
+        animation: fadeIn 1s ease-out;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+    }
+
     button {
         position: relative;
         text-decoration: none;
@@ -54,5 +179,21 @@ const { img, h3, h2, button, video, color } = Astro.props;
 
     button:hover {
         color: black;
+    }
+
+    #div-icon {
+        animation-name: anim;
+        animation-duration: 3s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes anim {
+        to {
+            transform: translateY(15px);
+            opacity: 0;
+        }
     }
 </style>
