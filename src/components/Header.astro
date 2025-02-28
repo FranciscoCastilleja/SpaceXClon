@@ -182,6 +182,8 @@ import ItemMenu from "./ItemMenu.astro";
 
     aside.classList.add('w-0');
 
+    id_shop.classList.toggle("hidden");
+
     btn.addEventListener("click", () => {
         const isOpen = aside.classList.contains("open");
 
@@ -190,7 +192,7 @@ import ItemMenu from "./ItemMenu.astro";
         aside.classList.toggle("w-0", isOpen);
 
         if (window.matchMedia("(min-width: 600px)").matches) {
-            id_shop.classList.toggle("hidden", isOpen);
+            id_shop.classList.toggle("hidden", !isOpen);
         }
     });
 </script>
