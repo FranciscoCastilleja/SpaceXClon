@@ -130,7 +130,7 @@ import ItemMenu from "./ItemMenu.astro";
 
 <style>
     header {
-        transition: top 0.3s;
+        transition: top 0.3s ease;
     }
 
     span {
@@ -152,6 +152,29 @@ import ItemMenu from "./ItemMenu.astro";
     }
 </style>
 
+<style is:inline>
+    aside {
+        transition: width 900ms ease-out;
+        width: 0;
+        overflow: hidden;
+    }
+
+    aside.open {
+        width: 20rem;
+    }
+
+    #shop {
+        transition: opacity 900ms ease-out, visibility 900ms ease-out;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #shop.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
+
 <script>
     const btn = document.getElementById("btn_menu") as HTMLInputElement;
     const aside = document.querySelector('aside') as HTMLElement;
@@ -159,21 +182,15 @@ import ItemMenu from "./ItemMenu.astro";
 
     aside.classList.add('w-0');
 
-    btn.addEventListener('click', () => {
-        if (aside.classList.contains('w-0')) {
-            aside.style.transition = "all 900ms ease-out";
-            id_shop.style.transition = "all 900ms ease-out";
-            id_shop.style.display = "none";
-            aside.classList.add('w-80')
-            aside.classList.remove('w-0');
-        } else {
-            aside.style.transition = "all 900ms ease-out";
-            id_shop.style.transition = "all 900ms ease-out";
-            if (window.matchMedia('(min-width: 600px)').matches) {
-                id_shop.style.display = "block";
-            }
-            aside.classList.remove('w-80')
-            aside.classList.add('w-0');
+    btn.addEventListener("click", () => {
+        const isOpen = aside.classList.contains("open");
+
+        aside.classList.toggle("open", !isOpen);
+        aside.classList.toggle("w-80", !isOpen);
+        aside.classList.toggle("w-0", isOpen);
+
+        if (window.matchMedia("(min-width: 600px)").matches) {
+            id_shop.classList.toggle("hidden", isOpen);
         }
     });
 </script>
